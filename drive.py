@@ -24,12 +24,25 @@ def stop():
   kit.motor1.throttle = 0.9
   time.sleep(0.8)
   kit.motor1.throttle = 0.8
-  time.sleep(0.6)
+  time.sleep(0.8)
   kit.motor1.throttle = 0.7
-  time.sleep(0.4)
+  time.sleep(0.8)
   kit.motor1.throttle = 0.6
-  time.sleep(0.2)
+  time.sleep(0.6)
+  kit.motor1.throttle = 0.55
+  time.sleep(0.4)
   kit.motor1.throttle = 0
+
+def reverse():
+  kit.motor1.throttle = 0
+  time.sleep(0.2)
+  kit.motor1.throttle = -0.7
+  time.sleep(0.3)
+  kit.motor1.throttle = -0.8
+  time.sleep(0.3)
+  kit.motor1.throttle = -0.9
+  time.sleep(0.3)
+  kit.motor1.throttle = -1.0
 
 try:
   while True:
@@ -42,6 +55,9 @@ try:
     elif char == curses.KEY_DOWN:
       screen.addstr(0, 0, 'stop ')
       stop()
+    elif char == curses.KEY_LEFT:
+      screen.addstr(0, 0, 'reverse ')
+      reverse()
 finally:
   curses.nocbreak()
   screen.keypad(0)
