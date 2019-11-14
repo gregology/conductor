@@ -50,10 +50,10 @@ try:
     if char == ord('q'):
       break
     elif char == curses.KEY_UP:
-      screen.addstr(0, 0, 'go  ')
+      screen.addstr(0, 0, 'go      ')
       go()
     elif char == curses.KEY_DOWN:
-      screen.addstr(0, 0, 'stop ')
+      screen.addstr(0, 0, 'stop    ')
       stop()
     elif char == curses.KEY_LEFT:
       screen.addstr(0, 0, 'reverse ')
