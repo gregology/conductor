@@ -42,8 +42,7 @@ class Conductor:
 
 
 
-
-    """
+"""
     elif self.speed == 1:
       smoke = """
                         (+++++++++++)
