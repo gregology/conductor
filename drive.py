@@ -13,14 +13,14 @@ class Conductor:
       self.speed = 0.5
     elif self.speed < 1:
       self.speed += 0.1
-    self.kit.motor1.throttle = self.speed
+    self.kit.motor1.throttle = min(self.speed, 1)
 
   def decrease_speed(self):
     if -0.5 < self.speed < 0.5:
       self.speed = -0.5
     if self.speed > -1:
       self.speed -= 0.1
-    self.kit.motor1.throttle = self.speed
+    self.kit.motor1.throttle = max(self.speed, -1)
 
   def stop(self):
     self.speed = 0
@@ -36,7 +36,15 @@ class Conductor:
         /// [___+/-+-\-/-+-\-/-+ \\_________|=|____________________|=
       //// @-=-@ \___/ \___/ \___/  @-==-@      @-==-@      @-==-@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
-    if self.speed == 1:
+    if 0.5 < self.speed < -0.5:
+        smoke = """
+
+
+
+
+
+    """
+    elif self.speed == 1:
       smoke = """
                         (+++++++++++)
                     (++++)
@@ -71,14 +79,6 @@ class Conductor:
               (++)
               (++)
               (++)"""
-    elif self.speed > 0.4:
-        smoke = """
-
-
-
-
-
-    """
     elif self.speed > -0.6:
         smoke = """
             (++++)
