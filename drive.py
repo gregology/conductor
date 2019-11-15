@@ -36,95 +36,96 @@ class Conductor:
         /// [___+/-+-\-/-+-\-/-+ \\_________|=|____________________|=
       //// @-=-@ \___/ \___/ \___/  @-==-@      @-==-@      @-==-@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
-  if self.speed = 1:
-    smoke = """
-                        (+++++++++++)
-                    (++++)
-                (+++)
-              (+++)
-              (++)
-  """
-  elif self.speed > 0.9:
+    if self.speed == 1:
       smoke = """
-                    (+++++++++++)
+                          (+++++++++++)
+                      (++++)
+                  (+++)
+                (+++)
+                (++)
+    """
+    elif self.speed > 0.9:
+        smoke = """
+                      (+++++++++++)
+                    (++++)
+                  (+++)
+                (+++)
+                (++)
+    """
+    elif self.speed > 0.8:
+        smoke = """
+                  (+++++++++++)
                   (++++)
                 (+++)
-              (+++)
-              (++)
-  """
-  elif self.speed > 0.8:
-      smoke = """
-                (+++++++++++)
-                (++++)
-              (+++)
-              (+++)
-              (++)
-  """
-  elif self.speed > 0.7:
-      smoke = """
-                (++++++)
                 (+++)
-              (++)
-              (++)
-              (++)
-  """
-  elif self.speed > 0.6:
-      smoke = """
+                (++)
+    """
+    elif self.speed > 0.7:
+        smoke = """
+                  (++++++)
+                  (+++)
+                (++)
+                (++)
+                (++)
+    """
+    elif self.speed > 0.6:
+        smoke = """
+                (++++)
+                (+++)
+                (++)
+                (++)
+                (++)
+    """
+    elif self.speed > 0.5:
+        smoke = """
+              (++++)
+                (++)
+                (++)
+                (++)
+                (++)
+    """
+    elif self.speed > 0.4:
+        smoke = """
+
+
+
+
+
+    """
+    elif self.speed > -0.5:
+        smoke = """
+              (++++)
+                (++)
+                (++)
+                (++)
+                (++)
+    """
+    elif self.speed > -0.6:
+        smoke = """
               (++++)
               (+++)
-              (++)
-              (++)
-              (++)
-  """
-  elif self.speed > 0.5:
-      smoke = """
-            (++++)
-              (++)
-              (++)
-              (++)
-              (++)
-  """
-  elif self.speed > 0.4:
-      smoke = """
-
-
-
-
-
-  """
-  elif self.speed > -0.5:
-      smoke = """
-            (++++)
-              (++)
-              (++)
-              (++)
-              (++)
-  """
-  elif self.speed > -0.6:
-      smoke = """
-            (++++)
+                (++)
+                (++)
+                (++)
+    """
+    elif self.speed > -0.7:
+        smoke = """
+        (++++++)
             (+++)
               (++)
-              (++)
-              (++)
-  """
-  elif self.speed > -0.7:
-      smoke = """
-      (++++++)
-          (+++)
-            (++)
-              (++)
-              (++)
-  """
-  else:
-      smoke = """
-  (++++++++++)
-        (++++)
-          (+++)
+                (++)
+                (++)
+    """
+    else:
+        smoke = """
+    (++++++++++)
+          (++++)
             (+++)
-              (++)
-  """
-  return smoke + train
+              (+++)
+                (++)
+    """
+    
+    return smoke + train
 
 
 
@@ -150,7 +151,7 @@ try:
     elif char == curses.KEY_DOWN:
       train.decrease_speed()
       screen.addstr(0, 0, train.draw())
-    elif char == ord(' ')
+    elif char == ord(' '):
       train.stop()
       screen.addstr(0, 0, train.draw())
 finally:
