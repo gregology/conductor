@@ -104,6 +104,39 @@ try:
     elif char == ord('r'):
       screen.addstr(0, 0, train_reverse)
       reverse()
+    elif char == ord('`'):
+      screen.addstr(0, 0, train_stopped)
+      kit.motor1.throttle = 0
+    elif char == ord('1'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.55
+    elif char == ord('2'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.6
+    elif char == ord('3'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.65
+    elif char == ord('4'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.7
+    elif char == ord('5'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.75
+    elif char == ord('6'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.8
+    elif char == ord('7'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.85
+    elif char == ord('8'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.9
+    elif char == ord('9'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 0.95
+    elif char == ord('0'):
+      screen.addstr(0, 0, train_go)
+      kit.motor1.throttle = 1
 finally:
   curses.nocbreak()
   screen.keypad(0)
