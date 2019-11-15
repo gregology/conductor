@@ -8,25 +8,25 @@ class Conductor:
     self.kit = MotorKit()
     self.speed = 0
 
-  def increase_speed():
+  def increase_speed(self):
     if -0.5 < self.speed < 0.5:
       self.speed = 0.5
     elif self.speed < 1:
       self.speed += 0.1
     self.kit.motor1.throttle = self.speed
 
-  def decrease_speed():
+  def decrease_speed(self):
     if -0.5 < self.speed < 0.5:
       self.speed = -0.5
     if self.speed > -1:
       self.speed -= 0.1
     self.kit.motor1.throttle = self.speed
 
-  def stop():
+  def stop(self):
     self.speed = 0
     self.kit.motor1.throttle = self.speed
 
-  def draw():
+  def draw(self):
     train = """
                 [~]
               | | (~)  (~)  (~)    /~~~~~~~~~~~~
